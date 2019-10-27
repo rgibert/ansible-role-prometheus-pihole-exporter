@@ -1,0 +1,46 @@
+---
+- block:
+
+    - name: load {{ ansible_architecture }} vars
+      include_vars: "vars/{{ ansible_architecture }}.yml"
+
+    - name: load {{ ansible_system }} vars
+      include_vars: "vars/{{ ansible_system }}.yml"
+
+    - name: load {{ ansible_system }}-{{ ansible_architecture }} vars
+      include_vars: "vars/{{ ansible_system }}-{{ ansible_architecture }}.yml"
+
+    - name: create install path
+      file:
+        state: directory
+        path: "{{ prometheus_pihole_exporter_install_root }}"
+
+    - name: install binary
+      get_url:
+        url: https://github.com/eko/pihole-exporter/releases/{{ prometheus_pihole_exporter_version }}/download/pihole_exporter-{{ prometheus_pihole_exporter_os }}-{{ prometheus_pihole_exporter_bin_arch }}
+        dest: "{{ prometheus_pihole_exporter_install_root }}"
+        owner: "{{ prometheus_pihole_exporter_user }}"
+        group: "{{ prometheus_pihole_exporter_group }}"
+        mode: u=rwx,g=rx,o=rx
+        checksum: "{{ prometheus_pihole_exporter_checksum }}"
+
+    - name: copy service file
+      template:
+        src: templates/etc/systemd/system/prometheus-pihole-exporter.service.j2
+        dest: /etc/systemd/system/prometheus-pihole-exporter.service
+        owner: root
+        group: root
+        mode: u=rw,g=r,o=r
+      notify:
+        - restart prometheus-pihole-exporter
+
+    - name: enable service
+      systemd:
+        name: prometheus-pihole-exporter
+        enabled: true
+        state: started
+
+  become: true
+  become_user: root
+  tags:
+    - prometheus_pihole_exporter

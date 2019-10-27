@@ -1,0 +1,29 @@
+---
+galaxy_info:
+  role_name: prometheus_pihole_exporter
+  author: Richard Gibert
+  company: Gibert.ca
+  description: Installs eko/pihole_exporter for Prometheus
+  license: GPLv3
+  min_ansible_version: 2.2
+  platforms:
+    - name: EL
+      versions:
+        - 6
+        - 7
+        - 8
+    - name: Ubuntu
+      versions:
+        - artful
+        - bionic
+        - cosmic
+        - eoan
+        - trusty
+        - xenial
+    - name: Debian
+      versions:
+        - 10
+  galaxy_tags:
+    - pihole
+    - prometheus
+dependencies: []
