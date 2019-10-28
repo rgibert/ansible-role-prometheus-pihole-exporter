@@ -21,3 +21,5 @@ verifier:
   name: testinfra
   lint:
     name: flake8
+    env:
+      FLAKE8_IGNORE: E501
