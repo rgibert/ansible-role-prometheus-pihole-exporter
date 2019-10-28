@@ -23,6 +23,8 @@
         group: "{{ prometheus_pihole_exporter_group }}"
         mode: u=rwx,g=rx,o=rx
         checksum: "{{ prometheus_pihole_exporter_checksum }}"
+      tags:
+        - skip_ansible_lint
 
     - name: copy service file
       template:
