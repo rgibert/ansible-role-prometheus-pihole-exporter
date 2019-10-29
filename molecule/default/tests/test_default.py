@@ -14,7 +14,8 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
 def test_bin_installed(host):
     """Tests that the exporter binary was installed properly"""
     host_file = host.file(
-        '/usr/local/share/prometheus-pihole-exporter/pihole_exporter-linux-amd64'
+        '/usr/local/share/prometheus-pihole-exporter/' +
+        'pihole_exporter-linux-amd64'
     )
     assert host_file.is_file
     assert host_file.user == 'pi'
