@@ -17,7 +17,7 @@
 
     - name: install binary
       get_url:
-        url: "https://github.com/eko/pihole-exporter/releases/download/{{ prometheus_pihole_exporter_version }}/pihole_exporter-{{ prometheus_pihole_exporter_os }}-{{ prometheus_pihole_exporter_bin_arch }}"
+        url: "https://github.com/eko/pihole-exporter/releases/{{ prometheus_pihole_exporter_version }}/download/pihole_exporter-{{ prometheus_pihole_exporter_os }}-{{ prometheus_pihole_exporter_bin_arch }}"
         dest: "{{ prometheus_pihole_exporter_install_root }}"
         owner: "{{ prometheus_pihole_exporter_user }}"
         group: "{{ prometheus_pihole_exporter_group }}"
