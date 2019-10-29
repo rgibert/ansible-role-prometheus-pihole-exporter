@@ -1,0 +1,3 @@
+skip_list:
+  - '204'
+use_default_rules: true
