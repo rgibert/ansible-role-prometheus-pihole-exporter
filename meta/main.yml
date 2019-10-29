@@ -14,11 +14,8 @@ galaxy_info:
         - 8
     - name: Ubuntu
       versions:
-        - artful
         - bionic
-        - cosmic
         - eoan
-        - trusty
         - xenial
     - name: Debian
       versions:
