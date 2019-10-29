@@ -26,4 +26,7 @@ galaxy_info:
   galaxy_tags:
     - pihole
     - prometheus
-dependencies: []
+dependencies:
+  - role: rgibert.user-setup
+    user_setup_username: "{{ prometheus_pihole_exporter_user }}"
+    user_setup_group: "{{ prometheus_pihole_exporter_group }}"
