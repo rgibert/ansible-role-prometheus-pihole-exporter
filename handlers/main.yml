@@ -1,5 +1,0 @@
----
-- name: restart prometheus-pihole-exporter
-  systemd:
-    name: prometheus-pihole-exporter
-    state: restarted
