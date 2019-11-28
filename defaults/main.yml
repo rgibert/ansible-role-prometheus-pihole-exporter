@@ -1,0 +1,8 @@
+---
+prometheus_pihole_exporter_base_url: "https://github.com/eko/pihole-exporter/releases/download/{{ single_binary_service_version }}"
+prometheus_pihole_exporter_dl_url: "{{ prometheus_pihole_exporter_base_url }}/{{ prometheus_pihole_exporter_bin }}"
+prometheus_pihole_exporter_bin: "pihole_exporter-{{ prometheus_pihole_exporter_os }}-{{ prometheus_pihole_exporter_bin_arch }}"
+prometheus_pihole_exporter_full_bin: "/usr/local/share/{{ single_binary_service_name }}-{{ single_binary_service_version }}/{{ prometheus_pihole_exporter_bin }}"
+prometheus_pihole_exporter_version: "0.0.6"
+prometheus_pihole_exporter_user: pi
+prometheus_pihole_exporter_group: pi
