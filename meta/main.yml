@@ -19,7 +19,7 @@ galaxy_info:
         - xenial
     - name: Debian
       versions:
-        - 10
+        - buster
   galaxy_tags:
     - pihole
     - prometheus
@@ -27,7 +27,7 @@ galaxy_info:
     - prometheuspiholeexporter
 dependencies:
   - role: rgibert.single_binary_service
-    version: "{{ single_binary_service_role_version }}"
+    version: 1.2.1
     prometheus_pihole_exporter_bin_arch: amd64
     prometheus_pihole_exporter_checksum: sha256:35a224b8f6c493de4695669dd38b5ca2a5b65b04d4b56c2a3d5a5a2ee7af3966
     when:
@@ -35,7 +35,7 @@ dependencies:
     tags:
       - prometheus_pihole_exporter
   - role: rgibert.single_binary_service
-    version: "{{ single_binary_service_role_version }}"
+    version: 1.2.1
     prometheus_pihole_exporter_bin_arch: arm
     prometheus_pihole_exporter_checksum: sha256:25831663bc815ef5918b7f39b8397430bc74bcae355f23000e833b6f4b25ccef
     when:
