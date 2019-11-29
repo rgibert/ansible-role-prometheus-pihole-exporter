@@ -7,7 +7,6 @@ single_binary_service_start_cmd: "{{ prometheus_pihole_exporter_full_bin }}"
 single_binary_service_stop_cmd: "/usr/bin/ps auwwx | grep {{ prometheus_pihole_exporter_full_bin }} | grep -v grep | awk '{print $2}' | xargs kill -9"
 single_binary_service_user: "{{ prometheus_pihole_exporter_user }}"
 single_binary_service_version: "{{ prometheus_pihole_exporter_version }}"
-single_binary_service_role_version: "1.2.1"
 single_binary_service_exec_files:
   - "/usr/local/share/{{ single_binary_service_name }}-{{ prometheus_pihole_exporter_version }}/pihole_exporter-{{ prometheus_pihole_exporter_os }}-{{ prometheus_pihole_exporter_bin_arch }}"
 
